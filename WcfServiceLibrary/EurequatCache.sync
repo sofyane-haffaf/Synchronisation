@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<syncDesignerSurface dslVersion="1.0.0.0" Id="a1a04688-7086-4b30-aa0a-a4556dcc30ce" parentDesignerName="EurequatCache" codeGenerationMode="Client and Server" synchronizeInOneTransaction="false" clientFileLocation="ffa5cdf8-fe86-4216-a95a-c5912251e9fa" serverFileLocation="2774b8a0-7565-4268-a7fd-21cacfa6e5e5" isRootSyncDesigner="true" rootSyncDesignerShouldGenerateCode="true" clientFileHintPath="..\Synchronisation\EurequatCache.Client.sync" rootSyncDesignerCodeGenerationMode="ServerOnly" isClientSyncDesigner="false" isServerSyncDesigner="false" changeTrackingType="SqlServerChangeTracking" xmlns="http://schemas.microsoft.com/dsltools/SyncDesigner">
+  <syncAdapters>
+    <syncAdapter Id="1ae60450-4d4d-4ae9-993b-d9bbf1f944e2" name="personneSyncAdapter" tableName="personne">
+      <syncAdapterCommands>
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableInsertCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableDeleteCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableUpdateCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableSelectConflictDeletedRowsCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableSelectConflictUpdatedRowsCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableSelectIncrementalInsertsCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableSelectIncrementalDeletesCommand" />
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTableSelectIncrementalUpdatesCommand" />
+      </syncAdapterCommands>
+    </syncAdapter>
+  </syncAdapters>
+  <syncTables>
+    <syncTable Id="3cdd9570-141a-4bc3-aa72-6b4f4fc06639" name="personneSyncTable" syncDirection="DownloadOnly" creationOptions="DropExistingOrCreateNewTable" tableName="personne" fullTableName="dbo.personne" deletedDateColumnName="DeletionDate" transactionIndex="0">
+      <syncGroup>
+        <syncGroupMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncGroup" />
+      </syncGroup>
+    </syncTable>
+  </syncTables>
+  <syncGroups>
+    <syncGroup Id="9cbe9a7c-5abe-411a-bae2-d56653deb426" name="personneSyncGroup" />
+  </syncGroups>
+  <clientSyncProvider>
+    <clientSyncProvider Id="712805a9-d5fe-418a-8f22-4fa32007aa80" name="EurequatCacheClientSyncProvider">
+      <syncConnection>
+        <syncConnectionMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/ClientConnection" />
+      </syncConnection>
+    </clientSyncProvider>
+  </clientSyncProvider>
+  <serverSyncProvider>
+    <serverSyncProvider Id="f66c1d56-b7b9-4622-9b7b-e85ce2191d0e" name="EurequatCacheServerSyncProvider">
+      <syncAdapters>
+        <syncAdapterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncAdapter" />
+      </syncAdapters>
+      <syncConnection>
+        <syncConnectionMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/ServerConnection" />
+      </syncConnection>
+      <selectNewAnchorCommand>
+        <syncAdapterCommandMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/selectNewAnchorCmd" />
+      </selectNewAnchorCommand>
+    </serverSyncProvider>
+  </serverSyncProvider>
+  <syncAgent>
+    <syncAgent name="EurequatCacheSyncAgent" synchronizeInOneTransaction="false">
+      <serverSyncProvider>
+        <serverSyncProviderMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/EurequatCacheServerSyncProvider" />
+      </serverSyncProvider>
+      <clientSyncProvider>
+        <clientSyncProviderMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/EurequatCacheClientSyncProvider" />
+      </clientSyncProvider>
+      <syncTables>
+        <syncTableMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/personneSyncTable" />
+      </syncTables>
+    </syncAgent>
+  </syncAgent>
+  <syncAdapterCommands>
+    <syncAdapterCommand Id="fc91af4e-f63f-409f-8332-405e098a8756" commandText=";WITH CHANGE_TRACKING_CONTEXT (@sync_client_id_binary) INSERT INTO dbo.personne ([id], [nom], [prenom]) VALUES (@id, @nom, @prenom) SET @sync_row_count = @@rowcount; IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne') " commandType="Text" name="personneSyncTableInsertCommand" commandKind="InsertCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@id" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@nom" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@prenom" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_row_count" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="95df56db-9b96-4c47-86a4-9528504076cf" commandText=";WITH CHANGE_TRACKING_CONTEXT (@sync_client_id_binary) DELETE dbo.personne FROM dbo.personne JOIN CHANGETABLE(VERSION dbo.personne, ([id]), (@id)) CT  ON CT.[id] = dbo.personne.[id] WHERE (@sync_force_write = 1 OR CT.SYS_CHANGE_VERSION IS NULL OR CT.SYS_CHANGE_VERSION &lt;= @sync_last_received_anchor OR (CT.SYS_CHANGE_CONTEXT IS NOT NULL AND CT.SYS_CHANGE_CONTEXT = @sync_client_id_binary)) SET @sync_row_count = @@rowcount; IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne') " commandType="Text" name="personneSyncTableDeleteCommand" commandKind="DeleteCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@id1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_force_write" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_row_count1" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="6192d211-d739-4fb4-9a21-7f923c918df9" commandText=";WITH CHANGE_TRACKING_CONTEXT (@sync_client_id_binary) UPDATE dbo.personne SET [nom] = @nom, [prenom] = @prenom FROM dbo.personne  JOIN CHANGETABLE(VERSION dbo.personne, ([id]), (@id)) CT  ON CT.[id] = dbo.personne.[id] WHERE (@sync_force_write = 1 OR CT.SYS_CHANGE_VERSION IS NULL OR CT.SYS_CHANGE_VERSION &lt;= @sync_last_received_anchor OR (CT.SYS_CHANGE_CONTEXT IS NOT NULL AND CT.SYS_CHANGE_CONTEXT = @sync_client_id_binary)) SET @sync_row_count = @@rowcount; IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne') " commandType="Text" name="personneSyncTableUpdateCommand" commandKind="UpdateCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@nom1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@prenom1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@id2" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_force_write1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor2" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary2" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_row_count2" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="8f26a2c9-72f3-4a87-9d5c-930e127204e1" commandText="SELECT CT.[id], CT.SYS_CHANGE_CONTEXT, CT.SYS_CHANGE_VERSION FROM CHANGETABLE(CHANGES dbo.personne, @sync_last_received_anchor) CT WHERE (CT.[id] = @id AND CT.SYS_CHANGE_OPERATION = 'D')" commandType="Text" name="personneSyncTableSelectConflictDeletedRowsCommand" commandKind="SelectConflictDeletedRowsCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor3" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@id3" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="23b69ef7-149b-48e2-a4b3-cd630ea131d7" commandText="SELECT dbo.personne.[id], [nom], [prenom], CT.SYS_CHANGE_CONTEXT, CT.SYS_CHANGE_VERSION FROM dbo.personne JOIN CHANGETABLE(VERSION dbo.personne, ([id]), (@id)) CT  ON CT.[id] = dbo.personne.[id]" commandType="Text" name="personneSyncTableSelectConflictUpdatedRowsCommand" commandKind="SelectConflictUpdatedRowsCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@id4" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="2d9c1324-31ad-4c8c-b14a-0c26e3741b6d" commandText="IF @sync_initialized = 0 SELECT dbo.personne.[id], [nom], [prenom] FROM dbo.personne LEFT OUTER JOIN CHANGETABLE(CHANGES dbo.personne, @sync_last_received_anchor) CT ON CT.[id] = dbo.personne.[id] WHERE (CT.SYS_CHANGE_CONTEXT IS NULL OR CT.SYS_CHANGE_CONTEXT &lt;&gt; @sync_client_id_binary) ELSE  BEGIN SELECT dbo.personne.[id], [nom], [prenom] FROM dbo.personne JOIN CHANGETABLE(CHANGES dbo.personne, @sync_last_received_anchor) CT ON CT.[id] = dbo.personne.[id] WHERE (CT.SYS_CHANGE_OPERATION = 'I' AND CT.SYS_CHANGE_CREATION_VERSION  &lt;= @sync_new_received_anchor AND (CT.SYS_CHANGE_CONTEXT IS NULL OR CT.SYS_CHANGE_CONTEXT &lt;&gt; @sync_client_id_binary)); IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne')  END " commandType="Text" name="personneSyncTableSelectIncrementalInsertsCommand" commandKind="SelectIncrementalInsertsCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_initialized" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor4" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary3" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_new_received_anchor" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="c7ccbb37-2172-4fa6-aa55-ecff02fce13e" commandText="IF @sync_initialized &gt; 0  BEGIN SELECT CT.[id] FROM CHANGETABLE(CHANGES dbo.personne, @sync_last_received_anchor) CT WHERE (CT.SYS_CHANGE_OPERATION = 'D' AND CT.SYS_CHANGE_VERSION &lt;= @sync_new_received_anchor AND (CT.SYS_CHANGE_CONTEXT IS NULL OR CT.SYS_CHANGE_CONTEXT &lt;&gt; @sync_client_id_binary)); IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne')  END " commandType="Text" name="personneSyncTableSelectIncrementalDeletesCommand" commandKind="SelectIncrementalDeletesCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_initialized1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor5" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_new_received_anchor1" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary4" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="9e962109-da3f-4a22-9aba-8286857a5072" commandText="IF @sync_initialized &gt; 0  BEGIN SELECT dbo.personne.[id], [nom], [prenom] FROM dbo.personne JOIN CHANGETABLE(CHANGES dbo.personne, @sync_last_received_anchor) CT ON CT.[id] = dbo.personne.[id] WHERE (CT.SYS_CHANGE_OPERATION = 'U' AND CT.SYS_CHANGE_VERSION &lt;= @sync_new_received_anchor AND (CT.SYS_CHANGE_CONTEXT IS NULL OR CT.SYS_CHANGE_CONTEXT &lt;&gt; @sync_client_id_binary)); IF CHANGE_TRACKING_MIN_VALID_VERSION(object_id(N'dbo.personne')) &gt; @sync_last_received_anchor RAISERROR (N'Le suivi des modifications SQL Server a effacé les informations de suivi pour la table « %s ». Pour récupérer à partir de cette erreur, le client doit réinitialiser sa base de données locale et réessayer',16,3,N'dbo.personne')  END " commandType="Text" name="personneSyncTableSelectIncrementalUpdatesCommand" commandKind="SelectIncrementalUpdatesCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_initialized2" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_last_received_anchor6" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_new_received_anchor2" />
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_client_id_binary5" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+    <syncAdapterCommand Id="aea1de12-228f-4085-91fe-40b2108adef9" commandText="Select @sync_new_received_anchor = CHANGE_TRACKING_CURRENT_VERSION()" commandType="Text" name="selectNewAnchorCmd" commandKind="SelectNewAnchorCommand">
+      <syncAdapterCommandParameters>
+        <syncAdapterCommandParameterMoniker name="/a1a04688-7086-4b30-aa0a-a4556dcc30ce/@sync_new_received_anchor3" />
+      </syncAdapterCommandParameters>
+    </syncAdapterCommand>
+  </syncAdapterCommands>
+  <syncAdapterCommandParameters>
+    <syncAdapterCommandParameter Id="185a7907-1613-4574-bd4c-6cd78dc98e53" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="feb18a97-a40f-4c95-b708-e879119f06fa" parameterType="Int" parameterName="@id" name="@id" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="98878f5e-5934-4611-a11f-409eb99bf342" parameterType="NVarChar" parameterName="@nom" name="@nom" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="cc270014-0cb5-49ff-bfa6-a3d548490664" parameterType="NVarChar" parameterName="@prenom" name="@prenom" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="468b328e-538e-4c03-b600-8ff8b57db8f8" parameterType="Int" parameterName="@sync_row_count" name="@sync_row_count" parameterDirection="Output" />
+    <syncAdapterCommandParameter Id="4346d452-dac6-48c1-9545-2a6f768d824c" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="b3f3aeb3-6fb3-4f0b-b668-5c528e5c82f4" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="ff4103d1-3fad-49ae-9c46-8a20986af152" parameterType="Int" parameterName="@id" name="@id1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="c8187f75-5a67-4042-96f0-df81a8a6e29b" parameterType="Bit" parameterName="@sync_force_write" name="@sync_force_write" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="e6d262b7-4d61-4215-a26d-513ad065f094" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="32d7f7fa-a58f-4c06-8c52-c7b00ad7d49d" parameterType="Int" parameterName="@sync_row_count" name="@sync_row_count1" parameterDirection="Output" />
+    <syncAdapterCommandParameter Id="04a075b0-a428-4e6d-9e0f-c458557522ac" parameterType="NVarChar" parameterName="@nom" name="@nom1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="1ca81923-87f9-433b-8815-d21424d5369c" parameterType="NVarChar" parameterName="@prenom" name="@prenom1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="20160c89-5d83-4929-af96-99ef36ba8b11" parameterType="Int" parameterName="@id" name="@id2" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="7fa9698d-f0ec-4c69-b270-149d1f047a6c" parameterType="Bit" parameterName="@sync_force_write" name="@sync_force_write1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="ed917a4c-715b-4b77-b166-2bb36bc1fa50" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor2" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="d15909e9-8288-46d8-a553-b583929ca89b" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary2" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="f0b01df2-3720-4735-afb9-8da4c91902cc" parameterType="Int" parameterName="@sync_row_count" name="@sync_row_count2" parameterDirection="Output" />
+    <syncAdapterCommandParameter Id="15e52e61-c096-41ed-9141-34ff5d06b2a3" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor3" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="6cde1bf1-0079-4ba5-9e78-0ff87e1427eb" parameterType="Int" parameterName="@id" name="@id3" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="bc23d6b2-0ef4-4020-a899-150f96784530" parameterType="Int" parameterName="@id" name="@id4" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="c9e6955a-7356-404c-85db-d7d631f8cdc2" parameterType="Bit" parameterName="@sync_initialized" name="@sync_initialized" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="bef985b4-8337-4e18-a0c0-61538d7a2211" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor4" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="78d9947e-48c2-4296-bda8-ec8bbeed4a06" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary3" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="d4b45571-8c1d-477e-b916-326c16af19b6" parameterType="BigInt" parameterName="@sync_new_received_anchor" name="@sync_new_received_anchor" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="0f422605-799e-447c-a8fa-25e133c3dd8b" parameterType="Bit" parameterName="@sync_initialized" name="@sync_initialized1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="a9a41e4c-efef-41b7-b1ef-4b6e65db1158" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor5" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="cbf9dc38-f0af-4fab-857a-1360c0bee335" parameterType="BigInt" parameterName="@sync_new_received_anchor" name="@sync_new_received_anchor1" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="23f60474-232c-4db4-a8a9-f4eb9cd2648b" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary4" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="9bfae89d-ce64-4c52-98f5-4b2ee908cbdc" parameterType="Bit" parameterName="@sync_initialized" name="@sync_initialized2" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="e80d5409-d068-4f1a-aef0-50e81719520a" parameterType="BigInt" parameterName="@sync_last_received_anchor" name="@sync_last_received_anchor6" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="e580d5e5-6bfe-4086-b304-dbba06874d58" parameterType="BigInt" parameterName="@sync_new_received_anchor" name="@sync_new_received_anchor2" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="47d30ee5-8090-4059-a2c3-d1c4b95a35e3" parameterType="VarBinary" parameterName="@sync_client_id_binary" name="@sync_client_id_binary5" parameterDirection="Input" />
+    <syncAdapterCommandParameter Id="85618b48-9ed5-4b46-be80-455e631839fc" parameterType="BigInt" parameterName="@sync_new_received_anchor" name="@sync_new_received_anchor3" parameterDirection="Output" />
+  </syncAdapterCommandParameters>
+  <syncConnections>
+    <syncConnection Id="1875345c-4a83-4aff-9170-d34ac2471d88" connectionString="Data Source=C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\Eurequat.sdf;Max Database Size=2047" providerInvariantName="Microsoft.SqlServerCe.Client.3.5" name="ClientConnection" connectionDisplayString="Eurequat.sdf" isAppSettings="false" appSettingsObjectName="&lt;&lt;FSIM&gt;&gt;" appSettingsPropertyReference="" />
+    <syncConnection Id="2d69b822-6a46-4735-ab65-a5c575c5a921" name="ServerConnection" connectionDisplayString="ServerEurequatConnectionString (Settings)" isAppSettings="true" appSettingsObjectName="Settings" appSettingsPropertyName="ServerEurequatConnectionString" appSettingsPropertyReference="" />
+  </syncConnections>
+</syncDesignerSurface>

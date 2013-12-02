@@ -1,0 +1,15 @@
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\bin\Debug\Eurequat.sdf
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\bin\Debug\Synchronisation.exe
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\bin\Debug\Synchronisation.pdb
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\bin\Debug\Microsoft.Synchronization.Data.dll
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\bin\Debug\Microsoft.Synchronization.Data.SqlServerCe.dll
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Properties.Resources.resources
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.csproj.GenerateResource.Cache
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.exe
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.pdb
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Acceuil.resources
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Ajout.resources
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Authentification.resources
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Modification.resources
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\obj\Debug\Synchronisation.Suppression.resources

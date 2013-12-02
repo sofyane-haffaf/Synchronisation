@@ -1,0 +1,6 @@
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll.config
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb

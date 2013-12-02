@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<syncDesignerSurface dslVersion="1.0.0.0" Id="7d7fd018-1c8e-4ed4-94f2-03a6048eb1dc" parentDesignerName="EurequatCache" codeGenerationMode="ClientOnly" synchronizeInOneTransaction="false" clientFileLocation="ffa5cdf8-fe86-4216-a95a-c5912251e9fa" serverFileLocation="2774b8a0-7565-4268-a7fd-21cacfa6e5e5" isRootSyncDesigner="false" rootSyncDesignerHintPath="..\WcfServiceLibrary\EurequatCache.sync" rootSyncDesignerShouldGenerateCode="true" isClientSyncDesigner="true" isServerSyncDesigner="false" changeTrackingType="SqlServerChangeTracking" xmlns="http://schemas.microsoft.com/dsltools/SyncDesigner">
+  <syncTables>
+    <syncTable Id="c6205afe-7848-4e50-8fb0-4286a526aeeb" name="personneSyncTable" syncDirection="DownloadOnly" creationOptions="DropExistingOrCreateNewTable" tableName="personne" fullTableName="dbo.personne" deletedDateColumnName="DeletionDate" transactionIndex="0">
+      <syncGroup>
+        <syncGroupMoniker name="/7d7fd018-1c8e-4ed4-94f2-03a6048eb1dc/personneSyncGroup" />
+      </syncGroup>
+    </syncTable>
+  </syncTables>
+  <syncGroups>
+    <syncGroup Id="6ed6eeee-abb3-4ec4-94e0-bdefb513ccbd" name="personneSyncGroup" />
+  </syncGroups>
+  <clientSyncProvider>
+    <clientSyncProvider Id="eaa75a7d-9e0a-4256-97d9-e7c496ad921e" name="EurequatCacheClientSyncProvider">
+      <syncConnection>
+        <syncConnectionMoniker name="/7d7fd018-1c8e-4ed4-94f2-03a6048eb1dc/ClientConnection" />
+      </syncConnection>
+    </clientSyncProvider>
+  </clientSyncProvider>
+  <syncAgent>
+    <syncAgent name="EurequatCacheSyncAgent" synchronizeInOneTransaction="false">
+      <clientSyncProvider>
+        <clientSyncProviderMoniker name="/7d7fd018-1c8e-4ed4-94f2-03a6048eb1dc/EurequatCacheClientSyncProvider" />
+      </clientSyncProvider>
+      <syncTables>
+        <syncTableMoniker name="/7d7fd018-1c8e-4ed4-94f2-03a6048eb1dc/personneSyncTable" />
+      </syncTables>
+    </syncAgent>
+  </syncAgent>
+  <syncConnections>
+    <syncConnection Id="21ae424a-a7c5-4a61-89fb-c22bdaedafdf" connectionString="Data Source=C:\Users\Sofyane\Documents\Visual Studio 2008\Projects\Synchronisation\Synchronisation\Eurequat.sdf;Max Database Size=2047" providerInvariantName="Microsoft.SqlServerCe.Client.3.5" name="ClientConnection" connectionDisplayString="Eurequat.sdf" isAppSettings="false" appSettingsObjectName="&lt;&lt;FSIM&gt;&gt;" appSettingsPropertyReference="" />
+  </syncConnections>
+</syncDesignerSurface>
